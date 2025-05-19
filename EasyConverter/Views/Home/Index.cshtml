@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Easy Video Converter";
+}
+
+<div class="container">
+    <div class="converter-box">
+        <h1 class="text-center mb-4">Easy Video Converter</h1>
+        
+        <div class="upload-section">
+            <div class="upload-zone" id="dropZone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & Drop your video here or</p>
+                <label class="btn btn-primary">
+                    Choose File
+                    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+                </label>
+            </div>
+        </div>
+
+        <div class="conversion-section mt-4" style="display: none;" id="conversionSection">
+            <div class="selected-file mb-3">
+                <p>Selected file: <span id="fileName">No file selected</span></p>
+            </div>
+
+            <div class="format-selection mb-3">
+                <label for="formatSelect" class="form-label">Convert to:</label>
+                <select class="form-select" id="formatSelect">
+                    <option value="mp4">MP4</option>
+                    <option value="webm">WebM</option>
+                    <option value="avi">AVI</option>
+                    <option value="mov">MOV</option>
+                    <option value="mkv">MKV</option>
+                </select>
+            </div>
+
+            <button class="btn btn-success w-100" id="convertBtn">
+                Convert Video
+            </button>
+        </div>
+
+        <div class="progress mt-4" style="display: none;">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" id="progressBar">0%</div>
+        </div>
+
+        <div class="alert mt-4" role="alert" id="statusMessage" style="display: none;"></div>
+    </div>
+</div>
